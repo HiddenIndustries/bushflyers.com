@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/services-section.astro";
+---
+
+<ContentSection title="Intelligent solutions that save time and money while increasing productivity" id="intro">
+  <Icon slot="eyebrow" name="logomark" class="h-32" />
+  <Fragment slot="lead">
+    Our combined experience and knowledge of farming and cropping are well suited to address your precision farming needs. We use <span class="text-primary">CASA certified pilots</span> flying the latest XAG P100 spraying and seeding drone and the M500 mapping drone integrated with the scalable aerial intelligence platform Birdi.
+    performance meets <span class="text-primary">powerful</span> developer experience.
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="#team"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="ion" name="id-card-outline" class="h-8" />
+      <span>Contact the team</span>
+    </a>
+    <a
+      href="https://astro.new/"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="rocket" class="h-8" />
+      <span>Try it out</span>
+    </a>
+  </div>
+</ContentSection>
