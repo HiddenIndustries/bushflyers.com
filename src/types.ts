@@ -26,3 +26,11 @@ export interface ShowcaseSite {
   image: ImageMetadata;
   url: string;
 }
+
+export interface profileDetails {
+  name: string;
+  email: string;
+  mobile: string;
+  photo: string;
+  title: string;
+}

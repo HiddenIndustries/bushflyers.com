@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/services-section.astro";
-import type { FeatureItem } from "~/types";
+import type { profileDetails } from "~/types";
 
 const profiles: Array<profileDetails> = [
     {
@@ -48,7 +48,7 @@ const profiles: Array<profileDetails> = [
             <h5 class="mb-1 text-xl">{name}</h5>
             <span class="text-sm text-offset">{title}</span>
                 <div class="flex mt-4 space-x-3 md:mt-6">
-                <a href="tel:{mobile}" class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"><Icon pack="clarity" name="mobile-line" class="h-8" /> {mobile}</a>
+                    <a href=`tel:${mobile}` class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"><Icon pack="clarity" name="mobile-line" class="h-8" /> {mobile}</a>
                 </div>
             </div>
         </div>
