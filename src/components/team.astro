@@ -9,21 +9,21 @@ const profiles: Array<profileDetails> = [
         name: "Charlie Bailey",
         mobile: "0428509877",
         email: "info@bushflyers.com",
-        photo: "../img/charlie.webp",
+        photo: "img/charlie.webp",
     },
     {
         title: "Operations Manager / Pilot",
         name: "Gerard O’Brien",
         mobile: "0416635215",
         email: "info@bushflyers.com",
-        photo: "../img/gerard.webp",
+        photo: "img/gerard.webp",
     },
     {
         title: "Pilot",
         name: "Andrew Hamilton",
         mobile: "0457188037",
         email: "info@bushflyers.com",
-        photo: "../img/andrew.webp",
+        photo: "img/andrew.webp",
     },
 ];
 ---
@@ -44,7 +44,7 @@ const profiles: Array<profileDetails> = [
             <div class="flex justify-end px-6 pt-6">
             </div>
             <div class="flex flex-col items-center gap-1 m-4">
-            <img class="w-72 h-72 mb-3 rounded-full shadow-lg" src={photo} alt="Bonnie image"/>
+            <img class="w-72 h-72 mb-3 rounded-full shadow-lg" src=`${import.meta.env.BASE_URL}${photo}` alt="Bonnie image"/>
             <h5 class="mb-1 text-xl">{name}</h5>
             <span class="text-sm text-offset">{title}</span>
                 <div class="flex mt-4 space-x-3 md:mt-6">
