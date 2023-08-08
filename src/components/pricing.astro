@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+import PricingSection from "~/components/pricing-section.astro";
+import ContentSection from "~/components/pricing-section.astro";
+import type { FeatureItem } from "~/types";
+
+const pricing = await Astro.glob('../content/pricing/*.md');
+---
+
+<ContentSection title="Pricing" id="pricing">
+  <Fragment slot="lead">
+    We usually provide a quote without seeing your property in person can also arrange a visit as part of a <span class="text-primary">no-obligation, free quotation</span>.  In this phase, we will consult with you about what is required and the total rea to be covered. After discussing options with you, we will provide a quotation so you have an estimate on the cost of the work.
+    <div class="text-offset text-xs">*Note – all charges listed below do not include GST, which will be added. We require a deposit prior to commencing any work. Clients providing their own chemicals pay a 50% deposit, while 75% deposit will be required to be charged to clients if we are suppling the chemicals required. The remaining amount owing for the job will be invoiced on completion of work. If the area treated was larger or smaller than initially quoted, amendments will be made to the final invoice as required.</div>
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+    {
+      pricing.map((price) => (
+        <li class="flex flex-col items-right gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={price.frontmatter.icon} />
+          </div>
+          <p class="font-extrabold text-xl">{price.frontmatter.title}</p>
+          <p class="text-offset text-sm">{price.frontmatter.description}</p>
+          
+          <p set:html={price.compiledContent()} />
+          
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

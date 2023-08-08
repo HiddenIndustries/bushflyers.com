@@ -3,14 +3,14 @@ import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import droneImage from "~/assets/XAG P100 Revocast Renderings Image.webp";
 import HeroImage from "~/components/hero-image.astro";
-import Starfield from "~/components/starfield.astro";
+import Backgrounds from "~/components/backgrounds.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
-  <Starfield />
+  <Backgrounds />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>

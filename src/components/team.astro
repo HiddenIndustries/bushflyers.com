@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/services-section.astro";
+import type { FeatureItem } from "~/types";
+
+const profiles: Array<profileDetails> = [
+    {
+        title: "Principal / Chief Pilot",
+        name: "Charlie Bailey",
+        mobile: "0428509877",
+        email: "info@bushflyers.com",
+        photo: "/img/charlie.webp",
+    },
+    {
+        title: "Operations Manager / Pilot",
+        name: "Gerard O’Brien",
+        mobile: "0416635215",
+        email: "info@bushflyers.com",
+        photo: "/img/gerard.webp",
+    },
+    {
+        title: "Pilot",
+        name: "Andrew Hamilton",
+        mobile: "0457188037",
+        email: "info@bushflyers.com",
+        photo: "/img/andrew.webp",
+    },
+];
+---
+
+<ContentSection title="Team" id="team">
+    <Fragment slot="lead">
+        All our team are <span class="text-primary">CASA certified pilots</span> flying the latest <span class="text-primary"></span>XAG P100</span> spraying and seeding drone and the <span class="text-primary">M500 mapping drone</span> integrated with the scalable aerial intelligence platform Birdi.
+        <div class="grid grid-cols-1">
+        <a href="mailto:info@bushflyers.com?subject=website-contact" target="_blank" class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"><Icon pack="ic" name="outline-email" class="h-8" />info@bushflyers.com</a>
+        </div>
+    </Fragment>
+
+    
+    <div class="grid max-w-6xl grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+    {
+        profiles.map(({ title, name, mobile, email, photo }) => (
+        <div class="border border-default bg-offset shadow">
+            <div class="flex justify-end px-6 pt-6">
+            </div>
+            <div class="flex flex-col items-center gap-1 m-4">
+            <img class="w-72 h-72 mb-3 rounded-full shadow-lg" src={photo} alt="Bonnie image"/>
+            <h5 class="mb-1 text-xl">{name}</h5>
+            <span class="text-sm text-offset">{title}</span>
+                <div class="flex mt-4 space-x-3 md:mt-6">
+                <a href="tel:{mobile}" class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"><Icon pack="clarity" name="mobile-line" class="h-8" /> {mobile}</a>
+                </div>
+            </div>
+        </div>
+        ))
+    }
+       </div>
+
+
+
+

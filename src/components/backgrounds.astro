@@ -1,0 +1,14 @@
+---
+import { Picture } from "@astrojs/image/components";
+import splashImg from '~/assets/bg-top.webp';
+const widths = [1200]
+---
+<div id="starfield" class="absolute inset-0 backgroundSplash">
+  <Picture
+        class="h-full w-full object-cover"
+        src={splashImg}
+        widths={widths}
+        loading="eager"
+        alt="crop ready for the drone"
+      />
+</div>
