@@ -12,3 +12,6 @@
 - [Kevin Powell Astro intro](https://www.youtube.com/watch?v=acgIGT0J99U&t=725s)
 - [SVG variables](https://codepen.io/imohkay/pen/ojMqYJ)
 - [Iconify.design](https://iconify.design/)
+
+# Packages of note;
+- [embedding YouTube videos in Astro projects](https://www.npmjs.com/package/@astro-community/astro-embed-youtube)
