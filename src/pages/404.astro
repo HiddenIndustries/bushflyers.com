@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon";
+import "@fontsource/inter/variable.css";
+import Footer from "~/components/footer.astro";
+import "~/styles/index.css";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+        <link rel="icon" href=`${import.meta.env.BASE_URL}favicon.svg` type="image/svg+xml" />
+        <meta name="viewport" content="width=device-width" />
+        <title>404 Error Page</title>
+     <!-- initialize theme -->
+     <script is:inline>
+        const themeSaved = localStorage.getItem("theme");
+  
+        if (themeSaved) {
+          document.documentElement.dataset.theme = themeSaved;
+        } else {
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+        }
+  
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", (event) => {
+            if (!localStorage.getItem("theme")) {
+              document.documentElement.dataset.theme = event.matches
+                ? "dark"
+                : "light";
+            }
+          });
+      </script>
+    </head>
+    <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+        <main class="h-[80vh]">
+            <section class="grid gid-cols-1 pt-20">
+                <a class="hover:!text-default p-20 place-self-center" href=`${import.meta.env.BASE_URL}`>
+                    <h1 class="sr-only">BushFlyers</h1>
+                    <Icon name="logomark" class="h-20" />
+                </a>
+                <h1 class="gradient-text text-center font-extrabold text-6xl"><span class="font-mono">404</span> Not Found</h1>
+                <div class="text-primary text-center p-16">
+                    Appologies but; 
+                    <pre>{Astro.url.pathname}</pre>
+                    was not recognised, or could not be found&hellip;<br />
+                    <br />
+                    <a
+                        aria-label="Return to home page"
+                        href=`${import.meta.env.BASE_URL}`
+                        >Want&nbsp;to&nbsp;go&nbsp;to&nbsp;our&nbsp;home&nbsp;page&nbsp;instead?
+                    </a>
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>
