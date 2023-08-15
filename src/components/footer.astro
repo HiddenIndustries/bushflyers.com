@@ -4,8 +4,11 @@ import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
 
 ---
-
-<footer class="relative flex-wrap h-48 items-center justify-center bg-slate-800">
+<a class="flex justify-center h-16" title="Back to top" href="#starfield">
+  <h7 class="break-after-right text-primary">Back to top</h7>
+  <Icon name="mdi:arrow-top-bold" class="h-8 text-primary" />
+</a>
+<footer class="relative flex-wrap h-48 items-center justify-center bg-slate-800 border-t-2">
   <div class="max-w text-center text-sm text-white grow items-center p-4">
     Copyright © {new Date().getFullYear()} BushFlyers AG Drone services. All rights reserved.
   </div>
