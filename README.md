@@ -1,13 +1,18 @@
-# Astro Landing Page
+# BushFlyers drone website
 
 [![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
 
-> An Astro + Tailwind CSS example/template for landing pages.
+> An Astro + Tailwind CSS templating with svg and webp images.
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
+devlink: [Hithub pages](https://hiddenindustries.github.io/bushflyers.com/)
+
+## Documentation links
+[Useful project links](/docs/links.md)
 
 ## Features
 
+- GitHub workflow for building and deploying an Astro site to GitHub Pages 
+- MarkDown file blobs into page content
 - 💨 Tailwind CSS for styling
 - 🎨 Themeable
   - CSS variables are defined in `src/styles/theme.css` and mapped to Tailwind classes (`tailwind.config.cjs`)
@@ -33,8 +38,10 @@
 
 ## Credits
 
-- astronaut image
-  - source: https://github.com/withastro/astro-og-image; note: this repo is not available anymore
-- moon image
-  - source: https://unsplash.com/@nasa
+- Logo's remain copywrite to all holders and used in fair use.
+- Videos served from [XAG AU](https://www.xagaustralia.com.au/) youtube channel
 - other than that, a lot of material (showcase data, copy) was taken from official Astro sources, in particular https://astro.build/blog/introducing-astro/ and https://github.com/withastro/astro.build
+
+## Screenshot
+
+![Screenshots of BushFlyers website in early development](screenshots.webp)
