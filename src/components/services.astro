@@ -3,45 +3,8 @@ import { Icon } from "astro-icon";
 import ContentSection from "~/components/services-section.astro";
 import type { FeatureItem } from "~/types";
 
+const services = await Astro.glob('../content/drone-services/*.md');
 
-const services: Array<FeatureItem> = [
-  {
-    title: "High-Speed Spraying",
-    description:
-      "The XAG P100 drone has the ability to spray up to 10 Ha per hour depending on conditions. The drone has omnidirectional nozzles that ensure uniform spraying, reducing the risk of over or under-application. The downward rotor wash from the propellers agitates the crop surface which allows deep and even chemical coverage throughout the crop canopy. BushFlyers can complete tasks and cover more acres in less time, hence boosting productivity.",
-    icon: "eos-icons:drone",
-  },
-  {
-    title: "Broad Acre Seeding",
-    description:
-      "When your country is too wet or too rocky for the use of traditional wheeled implements the XAG P100 drone can also be used for broader purposes such as seeding. The drone's advanced sensors and GPS technology are used to navigate large areas of land and drop seed with precision. This method is faster and more efficient than traditional methods, leading to increased productivity and reduced labour costs. XAG has a state of the art spreading system, incorporating industry leading vertical centrifugal spreading discs and a smart screw feeder. As a result, not only can the system adapt easily to various types of fertilisers and seed, it also reduces payload drifting.",
-    icon: "la:seedling",
-  },
-  {
-    title: "Aerial Farm Surveys and Photography",
-    description:
-      "Drones have the capability of capturing aerial images and mapping areas in real-time, and the XAG P100 drone takes this to another level. This drone comes with a 16-megapixel camera that can capture high-quality images, providing farmers with accurate data on crop progress, growth, and signs of disease or pest infestation. This information allows farmers to make timely decisions and take preventive measures before it's too late. BushFlyers also operate the XAG M500 Remote Sensing Drone which is designed for precision agriculture, with the capability to fly autonomously and capture high definition images with high-performance data processing.",
-    icon: "uiw:map",
-  },
-  {
-    title: "Spraying Woody Weeds and Tussock Etc.",
-    description:
-      "Because the drone can apply chemicals lower and slower it is excellent for wet, rocky and harder to get at areas of your farm. For woody weeds we can spray at slower speeds to maximum coverage and plant penetration.",
-    icon: "mdi:spray",
-  },
-  {
-    title: "Pest Baiting",
-    description:
-      "Drones allow for precision dropping of bait around sensitive areas, with consistent and uniform bait coverage without gaps, which also has a much lower logistical cost than helicopters.",
-    icon: "icon-park-outline:pesticide",
-  },
-  {
-    title: "Plant Health Monitoring",
-    description:
-      "Inspect your field in minutes to discover threats to yield before they become a problem. Quantify and tag issues, then monitor the effect of treatment plans over the course of the season.",
-    icon: "ant-design:monitor-outlined",
-  },
-];
 ---
 
 <ContentSection title="Services" id="services">
@@ -50,13 +13,14 @@ const services: Array<FeatureItem> = [
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
-      services.map(({ title, description, icon }) => (
+      services.map(( service ) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
           <div class="h-16 w-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} />
+            <Icon name={service.frontmatter.icon} />
           </div>
-          <p class="text-center font-extrabold text-xl">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
+          <p class="text-center font-extrabold text-xl">{service.frontmatter.title}</p>
+          <p class="text-center text-offset text-sm">{service.frontmatter.description}</p>
+          <p set:html={service.compiledContent()} />
         </li>
       ))
     }

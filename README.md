@@ -9,6 +9,9 @@ devlink: [Hithub pages](https://hiddenindustries.github.io/bushflyers.com/)
 ## Documentation links
 [Useful project links](/docs/links.md)
 
+## CMS
+[Content Managment Notes](/docs/content_structure.md)
+
 ## Features
 
 - GitHub workflow for building and deploying an Astro site to GitHub Pages 

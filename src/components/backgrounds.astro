@@ -2,8 +2,13 @@
 import { Picture } from "@astrojs/image/components";
 import splashImg from '~/assets/bg-top.webp';
 const widths = [1200]
+// var bgArray = ['bg-top.webp', 'footer-grass.webp'];
+// var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+// var path = '~/assets/';
+// var imageUrl = path + bg;
 ---
-<div id="starfield" class="absolute inset-0">
+
+<div id="bushfield" class="absolute inset-0">
   <Picture
         class="h-full w-full object-cover"
         src={splashImg}
@@ -12,3 +17,4 @@ const widths = [1200]
         alt="crop ready for the drone"
       />
 </div>
+
